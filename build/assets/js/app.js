@@ -11,6 +11,7 @@
     'foundation.dynamicRouting.animations'
   ])
     .config(config)
+    .controller('MagoController', MagoController)
     .run(run)
   ;
 
@@ -30,5 +31,25 @@
   function run() {
     FastClick.attach(document.body);
   }
+
+
+  MagoController.$inject = ['$scope', '$stateParams', '$state', '$controller', '$http'];
+  function MagoController($scope, $stateParams, $state, $controller, $http) {
+    angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
+
+    $scope.url = "http://dnd5.tr4ck.net/";
+
+    $http.get($scope.url).then(function(response) {
+      console.log(response.data);
+    });
+
+
+
+  }
+
+
+
+
+
 
 })();
