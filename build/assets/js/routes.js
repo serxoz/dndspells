@@ -1,0 +1,1 @@
+var foundationRoutes = [{"name":"test","url":"/manolo/","path":"templates/test.html"},{"name":"mago","url":"/mago/","path":"templates/mago.html"},{"name":"home","url":"/","path":"templates/home.html"}]; 
