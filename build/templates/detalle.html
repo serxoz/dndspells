@@ -1,32 +1,31 @@
 
 <div id="{{hechizo._id}}" class="card">
   <div class="card-divider">
-    <strong>{{hechizo.nombre}}</strong>
-    <br>
-    {{hechizo.tipo}}
+    <div class="spell-name">{{hechizo.nombre}}</div>
+    <div class="spell-type">{{hechizo.tipo}}</div>
   </div>
 
   <div class="card-section padding">
-    <div class="grid-content vertical">
-      <div class="grid-block">
-        Tiempo de lanzamiento: {{hechizo.tiempo_lanzamiento}}
+    <div class="grid-block vertical">
+      <div class="grid-content">
+        <span class="red">Tiempo de lanzamiento:</span>&nbsp;&nbsp;{{hechizo.tiempo_lanzamiento}}
       </div>
-      <div class="grid-block">
-        Rango: {{hechizo.rango}}
+      <div class="grid-content">
+        <span class="red">Rango:</span>&nbsp;&nbsp;{{hechizo.rango}}
       </div>
     </div>
-    <div class="grid-content vertical">
-      <div class="grid-block">
-        Componentes: {{hechizo.componentes}}
+    <div class="grid-block vertical">
+      <div class="grid-content">
+        <span class="red">Componentes:</span>&nbsp;&nbsp;{{hechizo.componentes}}
       </div>
-      <div class="grid-block">
-        Duración: {{hechizo.duracion}}
+      <div class="grid-content">
+        <span class="red">Duración:</span>&nbsp;&nbsp;{{hechizo.duracion}}
       </div>
     </div>
   </div>
 
   <div class="card-section">
     <!-- <p ng-bind-html="hechizo.descripcion"></p> -->
-    <p>{{hechizo.descripcion}}</p>
+    <p class="spell-description">{{hechizo.descripcion}}</p>
   </div>
 </div>

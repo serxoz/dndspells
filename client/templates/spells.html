@@ -10,8 +10,9 @@ controller: SpellsController
 <li ng-repeat="hechizo in hechizos">
   <!-- <a href="#" ui-sref="detalle({id: hechizo._id})"> -->
   <a href="#!/spell{{hechizo._id}}" id="spell_link">
-    {{hechizo.nombre}} <br>
-    <i style="font-size:0.85em">{{hechizo.tipo}}</i>
+    <div class="spell-name">{{hechizo.nombre}}</div>
+    <!-- <i style="font-size:0.85em">{{hechizo.tipo}}</i> -->
+    <div class="spell-type">{{hechizo.tipo}}</div>
   </a>
 </li>
 
