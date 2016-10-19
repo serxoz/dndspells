@@ -12,6 +12,7 @@
   ])
     .config(config)
     .controller('SpellsController', SpellsController)
+    .controller('DetalleController', DetalleController)
     .run(run)
   ;
 
@@ -44,5 +45,19 @@
       $scope.hechizos = data;
     });
   }
+
+    DetalleController.$inject = ['$scope', '$stateParams', '$state', '$controller', '$http'];
+    function DetalleController($scope, $stateParams, $state, $controller, $http) {
+      angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
+
+      var spellid = $stateParams.spellid;
+      var url = "http://dnd5.tr4ck.net/spell/"+spellid;
+
+      $http.get(url).success(function(data, status, headers, config) {
+        //console.log(data);
+        $scope.hechizo = data;
+      });
+    }
+
 
 })();

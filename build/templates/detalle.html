@@ -1,0 +1,31 @@
+
+<div id="{{hechizo._id}}" class="card">
+  <div class="card-divider">
+    <strong>{{hechizo.nombre}}</strong>
+    <br>
+    {{hechizo.tipo}}
+  </div>
+
+  <div class="card-section padding">
+    <div class="grid-content vertical">
+      <div class="grid-block">
+        Tiempo de lanzamiento: {{hechizo.tiempo_lanzamiento}}
+      </div>
+      <div class="grid-block">
+        Rango: {{hechizo.rango}}
+      </div>
+    </div>
+    <div class="grid-content vertical">
+      <div class="grid-block">
+        Componentes: {{hechizo.componentes}}
+      </div>
+      <div class="grid-block">
+        Duración: {{hechizo.duracion}}
+      </div>
+    </div>
+  </div>
+
+  <div class="card-section">
+    <p>{{hechizo.descripcion}}</p>
+  </div>
+</div>

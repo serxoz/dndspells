@@ -1,45 +1,14 @@
 
-<!-- <div ng-repeat="hechizo in hechizos"> {{hechizo.nombre}} </div> -->
-
 <section class="block-list">
 <ul>
 
 <li ng-repeat="hechizo in hechizos">
-  <a href="#" zf-popup-toggle="{{hechizo._id}}">{{hechizo.nombre}}</a>
-  <zf-popup id="{{hechizo._id}}" class="card spell-popup">
-    <a class="close-button" zf-popup-toggle="{{hechizo._id}}">×</a>
-    <!-- <div class="card"> -->
-      <div class="card-divider">
-        <strong>{{hechizo.nombre}}</strong>
-        <br>
-        {{hechizo.tipo}}
-      </div>
-      <div class="card-section">
-        <div class="grid-block vertical">
-          <div class="grid-block">
-            Tiempo de lanzamiento: {{hechizo.tiempo_lanzamiento}}
-          </div>
-          <div class="grid-block">
-            Rango: {{hechizo.rango}}
-          </div>
-        </div>
-        <div class="grid-block vertical">
-          <div class="grid-block">
-            Componentes: {{hechizo.componentes}}
-          </div>
-          <div class="grid-block">
-            Duración: {{hechizo.duracion}}
-          </div>
-        </div>
-      </div>
-      <div class="card-section">
-        <p>{{hechizo.descripcion}}</p>
-      </div>
-
-    <!-- </div> -->
-  </zf-popup>
+  <!-- <a href="#" ui-sref="detalle({id: hechizo._id})"> -->
+  <a href="/#!/spell{{hechizo._id}}">
+    {{hechizo.nombre}} <br>
+    <i style="font-size:0.85em">{{hechizo.tipo}}</i>
+  </a>
 </li>
-
 
 </ul>
 </section>
