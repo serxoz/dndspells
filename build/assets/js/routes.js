@@ -1,1 +1,1 @@
-var foundationRoutes = [{"name":"test","url":"/manolo/","path":"templates/test.html"},{"name":"mago","url":"/mago/","controller":"MagoController","path":"templates/mago.html"},{"name":"home","url":"/","path":"templates/home.html"}]; 
+var foundationRoutes = [{"name":"spells","url":"/spells:clase","controller":"SpellsController","path":"templates/spells.html"},{"name":"test","url":"/manolo/","path":"templates/test.html"},{"name":"home","url":"/","path":"templates/home.html"}]; 

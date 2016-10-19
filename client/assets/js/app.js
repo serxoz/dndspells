@@ -11,7 +11,7 @@
     'foundation.dynamicRouting.animations'
   ])
     .config(config)
-    .controller('MagoController', MagoController)
+    .controller('SpellsController', SpellsController)
     .run(run)
   ;
 
@@ -32,24 +32,17 @@
     FastClick.attach(document.body);
   }
 
-
-  MagoController.$inject = ['$scope', '$stateParams', '$state', '$controller', '$http'];
-  function MagoController($scope, $stateParams, $state, $controller, $http) {
+  SpellsController.$inject = ['$scope', '$stateParams', '$state', '$controller', '$http'];
+  function SpellsController($scope, $stateParams, $state, $controller, $http) {
     angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
 
-    $scope.url = "http://dnd5.tr4ck.net/";
+    var clase = $stateParams.clase;
+    var url = "http://dnd5.tr4ck.net/"+clase;
 
-    $http.get($scope.url).then(function(response) {
-      console.log(response.data);
+    $scope.hechizos = $http.get(url).success(function(data, status, headers, config) {
+      //console.log(data);
+      $scope.hechizos = data;
     });
-
-
-
   }
-
-
-
-
-
 
 })();
