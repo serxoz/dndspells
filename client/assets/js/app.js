@@ -58,10 +58,6 @@
       $scope.hechizo = data;
     });
 
-    $scope.spell_link = function(param){
-      console.log(param);
-    }
-
   }
 
 
