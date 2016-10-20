@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "foundation-apps": "~1.2.0",
-    "angular-sanitize": "^1.5.8"
+    "angular-sanitize": "^1.5.8",
+    "ngSticky": "^1.8.13"
   }
 }

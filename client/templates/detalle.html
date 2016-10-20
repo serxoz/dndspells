@@ -3,8 +3,39 @@ name: detalle
 url: /spell:spellid
 controller: DetalleController
 ---
+<!-- Menú para pantallas grandes -->
+<div sticky offset="10" class="show-for-medium">
+  <ul class="dark menu-bar">
+    <li><a class="titulo" ui-sref="spells({clase: 'bardo'})">Bardo</a></li>
+    <li><a class="titulo" ui-sref="spells({clase: 'brujo'})">Brujo</a></li>
+    <li><a class="titulo" ui-sref="spells({clase: 'clerigo'})">Clérigo</a></li>
+    <li><a class="titulo" ui-sref="spells({clase: 'druida'})">Druida</a></li>
+    <li><a class="titulo" ui-sref="spells({clase: 'explorador'})">Explorador</a></li>
+    <li><a class="titulo" ui-sref="spells({clase: 'hechicero'})">Hechicero</a></li>
+    <li><a class="titulo" ui-sref="spells({clase: 'mago'})">Mago</a></li>
+    <li><a class="titulo" ui-sref="spells({clase: 'paladin'})">Paladín</a></li>
+  </ul>
+</div>
 
-<div id="{{hechizo._id}}" class="card">
+<!-- Menú para pantallas pequenas -->
+<zf-action-sheet sticky offset="10" class="dark button show-for-small hide-for-medium" style="position:absolute; left: auto; right: 0px; z-index:10;">
+  <zf-as-button>=</zf-as-button>
+  <zf-as-content position="top" class="dark">
+    <ul>
+      <li><a class="titulo" ui-sref="spells({clase: 'bardo'})">Bardo</a></li>
+      <li><a class="titulo" ui-sref="spells({clase: 'brujo'})">Brujo</a></li>
+      <li><a class="titulo" ui-sref="spells({clase: 'clerigo'})">Clérigo</a></li>
+      <li><a class="titulo" ui-sref="spells({clase: 'druida'})">Druida</a></li>
+      <li><a class="titulo" ui-sref="spells({clase: 'explorador'})">Explorador</a></li>
+      <li><a class="titulo" ui-sref="spells({clase: 'hechicero'})">Hechicero</a></li>
+      <li><a class="titulo" ui-sref="spells({clase: 'mago'})">Mago</a></li>
+      <li><a class="titulo" ui-sref="spells({clase: 'paladin'})">Paladín</a></li>
+    </ul>
+  </zf-as-content>
+</zf-action-sheet>
+
+<!--                                      -->
+<div id="{{hechizo._id}}" class="card" style="margin-top:45px;">
   <div class="card-divider">
     <div class="grid-block">
       <div class="grid-content">

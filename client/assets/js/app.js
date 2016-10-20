@@ -5,6 +5,7 @@
     'ui.router',
     'ngAnimate',
     'ngSanitize',
+    'sticky',
 
     //foundation
     'foundation',
