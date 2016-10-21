@@ -89,14 +89,36 @@
     $http.get(url).success(function(data, status, headers, config) {
       //console.log(data);
       $scope.hechizo = data;
+
+      // Comprobar si es favorito:
+      var favoritos = $localstorage.get("spells");
+      try {
+        if (favoritos.indexOf(spellid) !== -1) {
+          $scope.hechizo.favorito = true;
+          console.log("Es favorito");
+          console.log($scope.hechizo.favorito);
+        }
+      } catch(err) {
+        console.log(err);
+        console.log("No favourite spell!");
+      }
+
     });
 
     $scope.favorito = function(spellid) {
-      console.log(spellid);
-
       var spells = [];
       spells.push($localstorage.get("spells"));
-      spells.push(spellid);
+
+      if ($scope.hechizo.favorito === true) {
+        var index = spells.indexOf(spellid);
+        spells.splice(index, 1);
+        $scope.hechizo.favorito = false;
+
+      } else {
+        spells.push(spellid);
+        $scope.hechizo.favorito = true;
+
+      }
 
       $localstorage.set("spells", spells);
     }

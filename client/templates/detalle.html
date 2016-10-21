@@ -46,7 +46,8 @@ controller: DetalleController
       </div>
       <div class="grid-content">
         <a class="secondary float-right" ng-click="favorito(hechizo._id)">
-          <img zf-iconic="" icon="star" size="medium" class="iconic-color-warning">
+          <img zf-iconic="" icon="star" size="medium" class="iconic-color-warning" ng-hide="hechizo.favorito">
+          <img zf-iconic="" icon="circle-x" size="medium" class="iconic-color-warning" ng-show="hechizo.favorito">
         </a>
       </div>
     </div>
