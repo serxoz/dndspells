@@ -32,42 +32,13 @@
 </zf-action-sheet>
 
 <!--                                      -->
-<div id="{{hechizo._id}}" class="card" style="margin-top:45px;">
-  <div class="card-divider">
-    <div class="grid-block">
-      <div class="grid-content">
+<section class="block-list">
+  <ul>
+    <li ng-repeat="hechizo in hechizos">
+      <a href="#!/spell{{hechizo._id}}" id="spell_link">
         <div class="spell-name">{{hechizo.nombre}}</div>
         <div class="spell-type">{{hechizo.tipo}}</div>
-      </div>
-      <div class="grid-content">
-        <a class="secondary float-right" ng-click="favorito(hechizo._id)">
-          <img zf-iconic="" icon="star" size="medium" class="iconic-color-warning">
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-section padding">
-    <div class="grid-block vertical">
-      <div class="grid-content">
-        <span class="red">Tiempo de lanzamiento:</span>&nbsp;&nbsp;{{hechizo.tiempo_lanzamiento}}
-      </div>
-      <div class="grid-content">
-        <span class="red">Rango:</span>&nbsp;&nbsp;{{hechizo.rango}}
-      </div>
-    </div>
-    <div class="grid-block vertical">
-      <div class="grid-content">
-        <span class="red">Componentes:</span>&nbsp;&nbsp;{{hechizo.componentes}}
-      </div>
-      <div class="grid-content">
-        <span class="red">Duración:</span>&nbsp;&nbsp;{{hechizo.duracion}}
-      </div>
-    </div>
-  </div>
-
-  <div class="card-section">
-    <p ng-bind-html="hechizo.descripcion"></p>
-    <!-- <p class="spell-description">{{hechizo.descripcion}}</p> -->
-  </div>
-</div>
+      </a>
+    </li>
+  </ul>
+</section>

@@ -15,6 +15,7 @@
     .config(config)
     .controller('SpellsController', SpellsController)
     .controller('DetalleController', DetalleController)
+    .controller('FavsController', FavsController)
     .factory('$localstorage', StorageFactory)
     .run(run)
   ;
@@ -50,8 +51,31 @@
     });
   }
 
-  DetalleController.$inject = ['$scope', '$stateParams', '$state', '$controller', '$http'];
-  function DetalleController($scope, $stateParams, $state, $controller, $http) {
+  FavsController.$inject = ['$scope', '$stateParams', '$state', '$controller', '$http', '$localstorage'];
+  function FavsController($scope, $stateParams, $state, $controller, $http, $localstorage) {
+    angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
+
+    var spells = [];
+
+    var spells_id = $localstorage.get("spells").split(',');
+    spells_id.forEach(function(spellid) {
+      if (spellid !== 'false'){
+        console.log(spellid);
+        var url = "http://dnd5.tr4ck.net/spell/"+spellid;
+
+        $http.get(url).success(function(data, status, headers, config) {
+          //console.log(data);
+           spells.push(data);
+        });
+
+      }
+    });
+
+    $scope.hechizos = spells;
+  }
+
+  DetalleController.$inject = ['$scope', '$stateParams', '$state', '$controller', '$http', '$localstorage'];
+  function DetalleController($scope, $stateParams, $state, $controller, $http, $localstorage) {
     angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
 
     var spellid = $stateParams.spellid;
@@ -64,6 +88,12 @@
 
     $scope.favorito = function(spellid) {
       console.log(spellid);
+
+      var spells = [];
+      spells.push($localstorage.get("spells"));
+      spells.push(spellid);
+
+      $localstorage.set("spells", spells);
     }
 
   }

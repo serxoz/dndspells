@@ -5,7 +5,7 @@ controller: DetalleController
 ---
 <!-- Menú para pantallas grandes -->
 <div sticky offset="10" class="show-for-medium">
-  <ul class="menu-bar" style="background-color: rgba(35, 35, 35, 0.7);">
+  <ul class="menu-bar topmenu" style="background-color: rgba(205, 198, 177, 0.8);">
     <li><a class="titulo" ui-sref="spells({clase: 'bardo'})">Bardo</a></li>
     <li><a class="titulo" ui-sref="spells({clase: 'brujo'})">Brujo</a></li>
     <li><a class="titulo" ui-sref="spells({clase: 'clerigo'})">Clérigo</a></li>
@@ -14,13 +14,14 @@ controller: DetalleController
     <li><a class="titulo" ui-sref="spells({clase: 'hechicero'})">Hechicero</a></li>
     <li><a class="titulo" ui-sref="spells({clase: 'mago'})">Mago</a></li>
     <li><a class="titulo" ui-sref="spells({clase: 'paladin'})">Paladín</a></li>
+    <li><a class="titulo" ui-sref="favoritos">Favoritos</a></li>
   </ul>
 </div>
 
 <!-- Menú para pantallas pequenas -->
-<zf-action-sheet sticky offset="10" class="button show-for-small hide-for-medium" style="position:absolute; left: auto; right: 0px; z-index:10; background-color: rgba(35, 35, 35, 0.7);">
+<zf-action-sheet sticky offset="10" class="button show-for-small hide-for-medium" style="position:absolute; left: auto; right: 0px; z-index:10; background-color: rgba(205, 198, 177, 0.8);">
   <zf-as-button>=</zf-as-button>
-  <zf-as-content position="top"  style="background-color: rgba(35, 35, 35, 0.7);">
+  <zf-as-content position="top"  style="background-color: rgba(205, 198, 177, 0.8);">
     <ul>
       <li><a class="titulo" ui-sref="spells({clase: 'bardo'})">Bardo</a></li>
       <li><a class="titulo" ui-sref="spells({clase: 'brujo'})">Brujo</a></li>
@@ -30,6 +31,7 @@ controller: DetalleController
       <li><a class="titulo" ui-sref="spells({clase: 'hechicero'})">Hechicero</a></li>
       <li><a class="titulo" ui-sref="spells({clase: 'mago'})">Mago</a></li>
       <li><a class="titulo" ui-sref="spells({clase: 'paladin'})">Paladín</a></li>
+      <li><a class="titulo" ui-sref="favoritos">Favoritos</a></li>
     </ul>
   </zf-as-content>
 </zf-action-sheet>

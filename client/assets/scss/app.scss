@@ -23,7 +23,10 @@ a {
   font-size: 1.5em;
   padding: 0.5em;
   opacity: 1 !important;
-  color: #EEE5CE !important;
+  //color: #EEE5CE !important;
+  //text-shadow: -1px 0 #58170D, 0 1px #58170D, 1px 0 #58170D, 0 -1px #58170D;
+  color: #58170D !important;
+  text-shadow: -1px 0 #EEE5CE, 0 1px #EEE5CE, 1px 0 #EEE5CE, 0 -1px #EEE5CE;
 }
 
 .spell-name {
@@ -45,4 +48,11 @@ a {
 
 .red {
   color: #58170D;
+}
+
+.topmenu {
+  @include menu-bar-style(
+    $background-hover: #e1ded0, // Background color of item on hover
+    $background-active: #666 // Background color of an active item
+  );
 }
