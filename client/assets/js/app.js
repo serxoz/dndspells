@@ -56,8 +56,13 @@
     angular.extend(this, $controller('DefaultController', {$scope: $scope, $stateParams: $stateParams, $state: $state}));
 
     var spells = [];
-
-    var spells_id = $localstorage.get("spells").split(',');
+    var spells_id = [];
+    try {
+      spells_id = $localstorage.get("spells").split(',');
+    }
+    catch(err) {
+      console.log("No favourite spell!");
+    };
     spells_id.forEach(function(spellid) {
       if (spellid !== 'false'){
         console.log(spellid);
