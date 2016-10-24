@@ -47,6 +47,9 @@
 
     $scope.hechizos = $http.get(url).success(function(data, status, headers, config) {
       //console.log(data);
+      data.sort(function(a, b){
+        return parseFloat(a.nivel) - parseFloat(b.nivel);
+      });
       $scope.hechizos = data;
     });
   }
