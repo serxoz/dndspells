@@ -105,9 +105,15 @@
 
     });
 
+    // Activar y desactivar favorito
     $scope.favorito = function(spellid) {
       var spells = [];
-      spells.push($localstorage.get("spells"));
+      try {
+        spells = $localstorage.get("spells").split(',');
+      }
+      catch(err) {
+        console.log("No favourite spell!");
+      };
 
       if ($scope.hechizo.favorito === true) {
         var index = spells.indexOf(spellid);
@@ -117,7 +123,6 @@
       } else {
         spells.push(spellid);
         $scope.hechizo.favorito = true;
-
       }
 
       $localstorage.set("spells", spells);
