@@ -1,2 +1,1 @@
 Ordenar hechizos por nivel e dentro do nivel alfabéticamente.
-Marcar activo no menu.
